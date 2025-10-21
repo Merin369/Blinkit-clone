@@ -2,15 +2,18 @@ import React, { useContext } from "react";
 import type { Product } from "../types/product";
 import { CartContext } from "../context/CartContext";
 
+type ProductCardProps = {
+  product: Product;
+  cartIconRef: React.RefObject<HTMLDivElement | null>;
+};
+
 export default function ProductCard({
   product,
-  cartIconRef,
-}: {
-  product: Product;
-  cartIconRef: React.RefObject<HTMLDivElement | null>; // ✅ allow null
-}) {
+  cartIconRef: _cartIconRef, // unused but preserved for future use
+}: ProductCardProps) {
   const ctx = useContext(CartContext);
   if (!ctx) throw new Error("ProductCard must be used within CartProvider");
+
   const { addToCart } = ctx;
 
   const offerPrice = product.offer

@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import ProductCard from "../pages/ProductCard";
 import type { Product } from "../types/product";
-import { CartContext } from "../context/CartContext";
+
 
 const allProducts: Product[] = [
 { id: 1, name: "Apple", price: 120, image: "/apple.png", category: "Fruits & Vegetables", offer: 10 },
