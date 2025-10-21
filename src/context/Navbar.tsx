@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 type NavbarProps = {
-  cartIconRef: React.RefObject<HTMLDivElement>;
+  cartIconRef: React.RefObject<HTMLDivElement | null>; // ✅ allow null
   onSearch: (query: string) => void;
 };
 
@@ -39,7 +39,7 @@ export default function Navbar({ cartIconRef, onSearch }: NavbarProps) {
     const query = search.trim();
     if (query) {
       onSearch(query);
-      setMenuOpen(false); // close mobile menu if open
+      setMenuOpen(false);
     }
   };
 
