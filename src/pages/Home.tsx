@@ -31,37 +31,39 @@ export default function Home({ products, cartIconRef }: HomeProps) {
         </div>
 
         {/* 🧱 Offer Advertisement Grid */}
-        <div className="mb-16 space-y-8">
+<div className="mb-16 space-y-8">
+  {/* Row 1: Two same-height ads */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    {/* Offer 1 */}
+    <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md flex items-center justify-center">
+      <img
+        src="/offer 1.jpg"
+        alt="Offer 1"
+        className="w-full h-full object-cover"
+      />
+    </div>
 
-          {/* Row 1: Two ads side-by-side */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="rounded-2xl overflow-hidden shadow-md">
-              <img
-                src="/offer 1.jpg"
-                alt="Offer 1"
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-md">
-              <img
-                src="/offer2.webp"
-                alt="Offer 2"
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
+    {/* Offer 2 */}
+    <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md flex items-center justify-center">
+      <img
+        src="/offer2.webp"
+        alt="Offer 2"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
 
-          {/* Row 2: Single centered ad */}
-          <div className="flex justify-center">
-            <div className="w-full sm:w-[80%] md:w-[65%] rounded-2xl overflow-hidden shadow-md">
-              <img
-                src="/offer3.jpg"
-                alt="Offer 3"
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-        </div>
+  {/* Row 2: Center ad */}
+  <div className="flex justify-center">
+    <div className="aspect-[4/3] w-full sm:w-[80%] md:w-[65%] rounded-2xl overflow-hidden shadow-md flex items-center justify-center">
+      <img
+        src="/offer3.jpg"
+        alt="Offer 3"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
 
         {/* 🛒 Product Sections */}
         {sections.map((section) => {
