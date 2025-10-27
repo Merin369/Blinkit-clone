@@ -19,16 +19,16 @@ export default function Home({ products, cartIconRef }: HomeProps) {
     <div className="bg-gray-50 min-h-screen flex justify-center pt-10">
       <div className="w-full max-w-[90%] sm:max-w-[85%] px-3 sm:px-10">
 
-        {/* 🏷 Big Banner */}
-        <div className="mb-12">
-          <div className="w-full overflow-hidden rounded-2xl shadow-lg">
-            <img
-              src="/bigoffer.jpg"
-              alt="Big Offer"
-              className="w-full h-auto max-h-[85vh] object-cover rounded-2xl"
-            />
-          </div>
-        </div>
+       {/* Big Offer Banner */}
+<div className="w-full sm:w-[80%] md:w-[60%] mx-auto mb-10 rounded-2xl overflow-hidden shadow-md">
+  <img
+    src="/bigoffer.jpeg"
+    alt="Big Offer"
+    className="w-full h-auto object-cover object-center"
+    loading="lazy"
+  />
+</div>
+
 
         {/* 🧱 Offer Advertisement Grid */}
 <div className="mb-16 space-y-8">
