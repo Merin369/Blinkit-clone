@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 type NavbarProps = {
-  cartIconRef: React.RefObject<HTMLDivElement | null>; // ✅ allow null
+  cartIconRef: React.RefObject<HTMLDivElement | null>;
   onSearch: (query: string) => void;
 };
 
@@ -45,7 +45,8 @@ export default function Navbar({ cartIconRef, onSearch }: NavbarProps) {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-md">
-      <div className="w-full max-w-none px-4 sm:px-6 lg:px-10">
+      {/* ✅ Match width with Home advertisement section */}
+      <div className="w-full max-w-[90%] sm:max-w-[85%] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo & Location */}
           <div className="flex items-center space-x-5">
