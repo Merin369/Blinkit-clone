@@ -45,8 +45,8 @@ export default function Navbar({ cartIconRef, onSearch }: NavbarProps) {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-md">
-      {/* ✅ Match width with Home advertisement section */}
       <div className="w-full max-w-[90%] sm:max-w-[85%] mx-auto px-4 sm:px-6 lg:px-10">
+        {/* ✅ Navbar Main Section */}
         <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo & Location */}
           <div className="flex items-center space-x-5">
@@ -54,11 +54,13 @@ export default function Navbar({ cartIconRef, onSearch }: NavbarProps) {
               <img
                 src="/blinkit-logo-hd.png"
                 alt="Blinkit"
-                className="h-14 sm:h-20 object-contain"
+                className="h-12 sm:h-20 object-contain"
               />
             </Link>
             <div className="hidden sm:flex flex-col text-gray-700">
-              <span className="font-semibold text-base">Delivery in 9 minutes</span>
+              <span className="font-semibold text-base">
+                Delivery in 9 minutes
+              </span>
               <select
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
@@ -72,7 +74,7 @@ export default function Navbar({ cartIconRef, onSearch }: NavbarProps) {
             </div>
           </div>
 
-          {/* Search Bar */}
+          {/* Desktop Search Bar */}
           <form
             onSubmit={handleSearch}
             className="hidden sm:flex flex-1 mx-6 items-center max-w-2xl"
@@ -122,11 +124,32 @@ export default function Navbar({ cartIconRef, onSearch }: NavbarProps) {
 
             {/* Mobile Menu Button */}
             <div className="sm:hidden">
-              <button onClick={() => setMenuOpen((s) => !s)} className="p-2">
+              <button
+                onClick={() => setMenuOpen((s) => !s)}
+                className="p-2 text-2xl"
+              >
                 {menuOpen ? "✕" : "☰"}
               </button>
             </div>
           </div>
+        </div>
+
+        {/* ✅ Mobile Search Bar inside Navbar with bottom padding */}
+        <div className="sm:hidden mt-3 pb-3">
+          <form onSubmit={handleSearch} className="flex items-center gap-2">
+            <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder={placeholders[placeholderIndex]}
+              className="flex-1 border border-gray-200 rounded-l-full px-4 py-2 text-sm outline-none"
+            />
+            <button
+              type="submit"
+              className="bg-green-600 text-white px-4 py-2 rounded-r-full text-sm transition duration-300 hover:bg-green-700 active:scale-95"
+            >
+              Search
+            </button>
+          </form>
         </div>
       </div>
 
@@ -142,22 +165,6 @@ export default function Navbar({ cartIconRef, onSearch }: NavbarProps) {
               Login / Sign up
             </Link>
 
-            {/* Mobile Search */}
-            <form onSubmit={handleSearch} className="flex items-center gap-2">
-              <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder={placeholders[placeholderIndex]}
-                className="flex-1 border border-gray-200 rounded-l-full px-4 py-2 text-sm outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-green-600 text-white px-4 py-2 rounded-r-full text-sm transition duration-300 hover:bg-green-700 active:scale-95"
-              >
-                Search
-              </button>
-            </form>
-
             {/* Mobile Cart */}
             <Link
               to="/cart"
@@ -170,7 +177,9 @@ export default function Navbar({ cartIconRef, onSearch }: NavbarProps) {
 
             {/* Mobile Location Selector */}
             <div className="pt-2 text-sm text-gray-500">
-              <span className="block font-semibold mb-1">Delivery in 9 minutes</span>
+              <span className="block font-semibold mb-1">
+                Delivery in 9 minutes
+              </span>
               <select
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
